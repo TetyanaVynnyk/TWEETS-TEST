@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "user": "Hansel",
+      "tweets": 777,
+      "followers": 100500,
+      "avatar": "./users/Hansel.svg"
+    },
+    {
+      "id": 2,
+      "user": "Julie",
+      "tweets": 444,
+      "followers": 100100,
+      "avatar": "./users/Julie.svg"
+    },
+    {
+      "id": 3,
+      "user": "Annie",
+      "tweets": 888,
+      "followers": 100300,
+      "avatar": "./users/Annie.svg"
+    }
+  ]
