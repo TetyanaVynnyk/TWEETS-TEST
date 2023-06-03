@@ -5,7 +5,8 @@ import styles from "./cardList.module.css";
 
 const CardList = () => {
   return (
-    <div className={styles.list}>
+    <div>
+      <ul className={styles.list}>
       {users &&
         users.map(({ avatar, user, id, tweets, followers }) => (
           <li key={id}>
@@ -17,7 +18,9 @@ const CardList = () => {
             />
           </li>
         ))}
+    </ul>
     </div>
+    
   );
 };
 
