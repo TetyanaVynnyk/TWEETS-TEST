@@ -34,8 +34,12 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
   const handleClick = () => {
     if (followers === initialFollowers) {
       setFollowers((prevState) => prevState + 1);
+      // const followersQuantity = setFollowers();
+      // localStorage.setItem(followers, followersQuantity.toString())
     } else {
       setFollowers((prevState) => prevState - 1);
+      // const followersQuantity = setFollowers();
+      // localStorage.setItem(followers, followersQuantity.toString())
     }
   };
 

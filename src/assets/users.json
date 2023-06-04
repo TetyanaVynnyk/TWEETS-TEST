@@ -1,23 +1,86 @@
 [
-    {
-      "id": 1,
-      "user": "Hansel",
-      "tweets": 777,
-      "followers": 100500,
-      "avatar": "./users/Hansel.svg"
-    },
-    {
-      "id": 2,
-      "user": "Julie",
-      "tweets": 444,
-      "followers": 100100,
-      "avatar": "./users/Julie.svg"
-    },
-    {
-      "id": 3,
-      "user": "Annie",
-      "tweets": 888,
-      "followers": 100300,
-      "avatar": "./users/Annie.svg"
-    }
-  ]
+  {
+    "user": "Elon Musk",
+    "tweets": 777,
+    "followers": 100500,
+    "avatar": "./users/Hansel.svg",
+    "id": "1"
+  },
+  {
+    "user": "Keanu Reeves",
+    "tweets": 555,
+    "followers": 800300,
+    "avatar": "./users/Hansel.svg",
+    "id": "2"
+  },
+  {
+    "user": "Goe Biden",
+    "tweets": 333,
+    "followers": 1000001,
+    "avatar": "./users/Hansel.svg",
+    "id": "3"
+  },
+  {
+    "user": "Bill Gates",
+    "tweets": 1000,
+    "followers": 777,
+    "avatar": "./users/Hansel.svg",
+    "id": "4"
+  },
+  {
+    "user": "Mark Zuckerberg",
+    "tweets": 999,
+    "followers": 3003,
+    "avatar": "./users/Hansel.svg",
+    "id": "5"
+  },
+  {
+    "user": "Tim Cook",
+    "tweets": 109,
+    "followers": 245231,
+    "avatar": "./users/Hansel.svg",
+    "id": "6"
+  },
+  {
+    "user": "Larry Page",
+    "tweets": 207,
+    "followers": 145921,
+    "avatar": "./users/Julie.svg",
+    "id": "7"
+  },
+  {
+    "user": "Sundar Pichai",
+    "tweets": 322,
+    "followers": 245810,
+    "avatar": "./users/Annie.svg",
+    "id": "8"
+  },
+  {
+    "user": "Volodymyr Zelenskiy",
+    "tweets": 1000000,
+    "followers": 1000000,
+    "avatar": "./users/Hansel.svg",
+    "id": "9"
+  },
+  {
+    "user": "Jack Ma",
+    "tweets": 166,
+    "followers": 142444,
+    "avatar": "./users/Julie.svg",
+    "id": "10"
+  },
+  {
+    "user": "Satya Nadella",
+    "tweets": 285,
+    "followers": 3145668,
+    "avatar": "./users/Annie.svg",
+    "id": "11"
+  },
+  {
+    "user": "Reed Hastings",
+    "tweets": 28,
+    "followers": 152368,
+    "avatar": "./users/Hansel.svg",
+    "id": "12"
+  }
+]
