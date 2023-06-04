@@ -4,6 +4,7 @@ import Avatar from "../Avatar";
 import Button from "../Button";
 import Logo from "../../assets/icons/Vector.svg";
 import styles from "./card.module.css";
+import buttonStyles from "../Button/button.module.css"
 
 const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
   const [followers, setFollowers] = useState(initialFollowers);
@@ -25,7 +26,9 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
   };
 
   const getButtonStatus = (followers) => {
-    return followers === initialFollowers ? "Follow" : "Following";
+    const ret = followers === initialFollowers ? "Follow" : "Following";
+    console.log(ret);
+    return ret;
   };
 
   const handleClick = () => {
@@ -41,14 +44,29 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
   return (
     <div className={styles.card}>
       <div className={styles.logoContainer}>
-        <img className={styles.img} src={Logo} alt="Logo" width="76px" height="22px" />
+        <img
+          className={styles.img}
+          src={Logo}
+          alt="Logo"
+          width="76px"
+          height="22px"
+        />
       </div>
       <Avatar name={name} avatarUrl={avatarUrl} />
       <p className={styles.text}> {tweets} tweets</p>
       <p className={styles.text}>{getVisibleFollowers(followers)} Followers</p>
-      <Button onClick={handleClick} name={buttonStatus}>
+      {buttonStatus === "Following" && (
+        <Button
+          onClick={handleClick}
+          name={buttonStatus}
+          className={buttonStyles.activeBtn}
+        >
+          {buttonStatus}
+        </Button>
+      )}
+      {buttonStatus === "Follow" && <Button onClick={handleClick} name={buttonStatus} className={buttonStyles.button}>
         {buttonStatus}
-      </Button>
+      </Button>}
     </div>
   );
 };
