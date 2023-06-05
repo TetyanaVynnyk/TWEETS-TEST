@@ -7,7 +7,7 @@ const Avatar = ({ name, avatarUrl }) => {
     <div className={styles.wrapper}>
       <div className={styles.avatarBorder}>
         <div className={styles.avatarWrapper}>
-          <img src={avatarUrl} alt={name} width="62px" height="62px" />
+          <img className={styles.avatar} src={avatarUrl} alt={name} width="62px" height="62px" />
         </div>
       </div>
     </div>

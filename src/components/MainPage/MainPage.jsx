@@ -13,8 +13,7 @@ const MainPage = () => {
       <div className={styles.mainPageWrapper}>
         <img className={styles.mainImg} src={tweetPct} alt="mainImage" />
       </div>
-      <div>
-      <nav>
+      <nav className={styles.nav}>
       <ul className={styles.nav__list}>
         <li>
           <Link className={styles.nav__link} to="/" >
@@ -27,9 +26,7 @@ const MainPage = () => {
           </Link>
         </li>
       </ul>
-    </nav>
-      </div>
-      
+    </nav>  
     </div>);
 };
 

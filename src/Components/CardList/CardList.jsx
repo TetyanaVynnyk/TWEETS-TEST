@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Card from "../Card";
 import Button from "../Button";
-import Loader from '../Loader/Loader';
+import Loader from "../Loader/Loader";
 
-import { getAllUsers } from '../../shared/services/users';
+import { getAllUsers } from "../../shared/services/users";
 
 import styles from "./cardList.module.css";
 
@@ -38,29 +39,38 @@ const CardList = () => {
   }, [users, currentPage, isLoadMoreClicked, usersPerPage]);
 
   const handleLoadMoreClick = () => {
-    setCurrentPage(prevPage => prevPage + 1);
+    setCurrentPage((prevPage) => prevPage + 1);
     setIsLoadMoreClicked(true);
   };
   return (
-    <div>
-    <ul className={styles.list}>
-      {displayedUsers.map(({ id, user, tweets, followers, avatar }) => (
-        <Card key={id} id={id}
-        name={user}
-        tweets={tweets}
-        initialFollowers={followers}
-        avatarUrl={avatar}
-      />
-      ))}
-    </ul>
-    {isLoading ? (
-      <Loader />
-    ) : (
-      users.length > displayedUsers.length && (
-        <Button onClick={handleLoadMoreClick}>Load More</Button>
-      )
-    )}
-  </div>
+    <div className={styles.wrapper}>
+      <ul className={styles.list}>
+        {displayedUsers.map(({ id, user, tweets, followers, avatar }) => (
+          <Card
+            key={id}
+            id={id}
+            name={user}
+            tweets={tweets}
+            initialFollowers={followers}
+            avatarUrl={avatar}
+          />
+        ))}
+      </ul>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        users.length > displayedUsers.length && (
+          <Button onClick={handleLoadMoreClick} className={styles.button}>
+            Load More
+          </Button>
+        )
+      )}
+      <nav className={styles.nav}>
+        <Link className={styles.nav__link} to="/">
+          back to Homepage
+        </Link>
+      </nav>
+    </div>
   );
 };
 

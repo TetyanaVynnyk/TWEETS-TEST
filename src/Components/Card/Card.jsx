@@ -22,7 +22,11 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
 
   const getVisibleFollowers = (followers) => {
     const str = followers.toString();
-    return str.slice(0, -3) + "," + str.slice(-3);
+    if(str.length > 3){
+      return str.slice(0, -3) + "," + str.slice(-3);
+    }
+    return str;
+    
   };
 
   const getButtonStatus = (followers) => {
@@ -32,14 +36,13 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
   };
 
   const handleClick = () => {
-    if (followers === initialFollowers) {
+      if (followers === initialFollowers) {
       setFollowers((prevState) => prevState + 1);
-      // const followersQuantity = setFollowers();
-      // localStorage.setItem(followers, followersQuantity.toString())
+      
+      
     } else {
       setFollowers((prevState) => prevState - 1);
-      // const followersQuantity = setFollowers();
-      // localStorage.setItem(followers, followersQuantity.toString())
+      
     }
   };
 

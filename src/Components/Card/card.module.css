@@ -33,6 +33,8 @@
 .text {
   line-height: 1.2;
   text-transform: uppercase;
+  color: #EBD8FF;
+  ;
 }
 
 .text:not(:last-of-type) {
@@ -42,3 +44,5 @@
 .text:last-of-type {
   margin-bottom: 26px;
 }
+
+
