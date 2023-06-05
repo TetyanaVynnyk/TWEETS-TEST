@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import Notiflix from 'notiflix';
 import PropTypes from "prop-types";
 import Avatar from "../Avatar";
 import Button from "../Button";
@@ -16,9 +17,9 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
     }
   }, [name]);
 
-  useEffect(() => {
-    localStorage.setItem(`${name}Followers`, followers.toString());
-  }, [followers, name]);
+  // useEffect(() => {
+  //   localStorage.setItem(`${name}Followers`, followers.toString());
+  // }, [followers, name]);
 
   const getVisibleFollowers = (followers) => {
     const str = followers.toString();
@@ -31,22 +32,23 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
 
   const getButtonStatus = (followers) => {
     const ret = followers === initialFollowers ? "Follow" : "Following";
-    console.log(ret);
+    // console.log(ret);
     return ret;
   };
 
   const handleClick = () => {
       if (followers === initialFollowers) {
-      setFollowers((prevState) => prevState + 1);
-      
-      
+        localStorage.setItem(`${name}Followers`, String(followers + 1));
+        setFollowers((prevState) => prevState + 1);
     } else {
+      localStorage.setItem(`${name}Followers`, String(followers - 1));
       setFollowers((prevState) => prevState - 1);
       
     }
   };
 
   const buttonStatus = getButtonStatus(followers);
+
 
   return (
     <div className={styles.card}>
@@ -75,8 +77,7 @@ const Card = ({ name, tweets, avatarUrl, initialFollowers }) => {
         {buttonStatus}
       </Button>}
     </div>
-  );
-};
+  )};
 
 Card.propTypes = {
   name: PropTypes.string.isRequired,
